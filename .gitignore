@@ -13,3 +13,24 @@ hs_err_pid*
 
 #for intelliJ IDEA IDEA
 target/
+
+.DS_Store
+target/
+.svn/
+*.swp
+*.iml
+.gradle
+/local.properties
+.idea/
+/build
+.project
+.settings/
+.classpath
+*.ipr
+*.iws
+*.pyc
+catalina.home_IS_UNDEFINED/
+META-INF/
+/rule-data-center-webapp/_cat/
+_cat/
+*.imi
