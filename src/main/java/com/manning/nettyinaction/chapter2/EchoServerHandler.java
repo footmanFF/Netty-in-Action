@@ -14,15 +14,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @author <a href="mailto:nmaurer@redhat.com">Norman Maurer</a>
  */
 @Sharable
-public class EchoServerHandler extends
-        ChannelInboundHandlerAdapter {
+public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx,
-        Object msg) {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ByteBuf in = (ByteBuf) msg;
-        System.out.println("Server received: " + ByteBufUtil
-                .hexDump(in));
+        System.out.println("Server received: " + ByteBufUtil.hexDump(in));
         ctx.write(in);
     }
 
@@ -32,9 +29,9 @@ public class EchoServerHandler extends
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx,
-        Throwable cause) {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
     }
+
 }
