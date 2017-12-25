@@ -18,6 +18,9 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        if (true) {
+            throw new RuntimeException();
+        }
         ByteBuf in = (ByteBuf) msg;
         System.out.println("Server received: " + ByteBufUtil.hexDump(in));
         ctx.write(in);

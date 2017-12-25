@@ -14,8 +14,7 @@ import io.netty.util.CharsetUtil;
  * @author <a href="mailto:nmaurer@redhat.com">Norman Maurer</a>
  */
 @Sharable
-public class EchoClientHandler extends
-        SimpleChannelInboundHandler<ByteBuf> {
+public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
@@ -23,16 +22,14 @@ public class EchoClientHandler extends
     }
 
     @Override
-    public void channelRead0(ChannelHandlerContext ctx,
-        ByteBuf in) {
-        System.out.println("Client received: " + ByteBufUtil
-                .hexDump(in));
+    public void channelRead0(ChannelHandlerContext ctx, ByteBuf in) {
+        System.out.println("Client received: " + ByteBufUtil.hexDump(in));
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx,
-        Throwable cause) {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
     }
+
 }

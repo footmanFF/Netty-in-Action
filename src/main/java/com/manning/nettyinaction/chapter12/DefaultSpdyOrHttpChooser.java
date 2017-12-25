@@ -22,14 +22,16 @@ public class DefaultSpdyOrHttpChooser extends SpdyOrHttpChooser {
         if (protocol == null) {
             return SelectedProtocol.UNKNOWN;
         }
-        switch (protocol) {
-            case "spdy/3.1":
-                return SelectedProtocol.SPDY_3_1;
-            case "http/1.1":
-                return SelectedProtocol.HTTP_1_1;
-            default:
-                return SelectedProtocol.UNKNOWN;
-        }
+        return null;
+        // TODO 零时注释
+//        switch (protocol) {
+//            case "spdy/3.1":
+//                return SelectedProtocol.SPDY_3_1;
+//            case "http/1.1":
+//                return SelectedProtocol.HTTP_1_1;
+//            default:
+//                return SelectedProtocol.UNKNOWN;
+//        }
     }
 
     @Override
